@@ -25,4 +25,12 @@ class Negociacao {
   get valor() {
     return this.volume;
   }
+  getStringData() {
+    let diaMesAno = `${this.data.getDate()}/${this.data.getMonth() +
+      1}/${this.data.getFullYear()}`;
+    return diaMesAno;
+  }
+  getNegociacao() {
+    return [this.getStringData(), this.quantidade, this.valor, this.volume];
+  }
 }
