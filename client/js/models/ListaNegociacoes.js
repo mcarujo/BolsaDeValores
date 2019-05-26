@@ -1,11 +1,11 @@
 class ListaNegociacoes {
   constructor() {
-    this.negociacoes = [];
+    this.negociacoes = Array;
   }
   adiciona(negociacoes) {
     this.negociacoes.push(negociacoes);
   }
-  get negociacoes() {
+  getNegociacoes() {
     return this.negociacoes;
   }
 }
