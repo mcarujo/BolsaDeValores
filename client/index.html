@@ -67,12 +67,16 @@
 
       <tbody id="tabelaNegociacoes"></tbody>
 
-      <tfoot></tfoot>
+      <tfoot>
+        <td colspan="3" style="text-align: center">TOTAL</td>
+        <td id="footer">0</td>
+      </tfoot>
     </table>
   </body>
   <script src="./js/lib/jquery-3.4.1.js"></script>
   <script src="./js/models/Negociacao.js"></script>
   <script src="./js/models/ListaNegociacoes.js"></script>
+  <script src="./js/views/NegociacoesViews.js"></script>
   <script src="./js/controllers/NegociacaoController.js"></script>
   <script>
     let negociacaoController = new NegociacaoController();
