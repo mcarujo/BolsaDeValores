@@ -21,8 +21,6 @@ class NegociacaoController {
     this.limpaForm();
     // let view = new NegociacoesView();
     NegociacoesView.refresh(this.listaNegociacoes.getNegociacoes(), total);
-    console.log(this.listaNegociacoes.getNegociacoes());
-    console.log(this.listaNegociacoes.getTotal());
   }
   limpaForm() {
     this.inputData.val("");
