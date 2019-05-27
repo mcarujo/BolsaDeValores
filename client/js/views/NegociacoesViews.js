@@ -1,15 +1,23 @@
 class NegociacoesView {
   //Recebe array de Negociacoes e retorna uma lista de elementos <tr>
-  row(dadosNegociacao) {
-    tr = $("<tr>");
-    dadosNegociacao.map(item => {
-      tr.append($("<td>").val(item));
+  static row(dadosNegociacao) {
+    let tr = $("<tr>").addClass("linhaNegociacao");
+    let dados = dadosNegociacao.getNegociacao();
+    dados.map(item => {
+      tr.append($("<td>").text(item));
     });
+    return tr;
   }
   //Recebe um array de elementos row e coloca na view
-  table(listaNegociacoes) {
+  static table(listaNegociacoes) {
     return listaNegociacoes.map(dadosNegociaca => {
       return this.row(dadosNegociaca);
     });
+  }
+  static refresh(listaNegociacoes, total) {
+    let table = this.table(listaNegociacoes);
+    $(".linhaNegociacao").remove();
+    $("#tabelaNegociacoes").append(table);
+    $("#footer").text(total);
   }
 }
