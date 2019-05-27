@@ -4,6 +4,7 @@ class NegociacaoController {
     this.inputQuantidade = $("#quantidade");
     this.inputValor = $("#valor");
     this.listaNegociacoes = new ListaNegociacoes();
+    this.total = 0.0;
   }
   criaNegociacao() {
     return new Negociacao(
@@ -16,6 +17,12 @@ class NegociacaoController {
     event.preventDefault();
     let negociacao = this.criaNegociacao();
     this.listaNegociacoes.adiciona(negociacao);
+    let total = this.listaNegociacoes.getTotal();
+    this.limpaForm();
+    // let view = new NegociacoesView();
+    NegociacoesView.refresh(this.listaNegociacoes.getNegociacoes(), total);
+    console.log(this.listaNegociacoes.getNegociacoes());
+    console.log(this.listaNegociacoes.getTotal());
   }
   limpaForm() {
     this.inputData.val("");
