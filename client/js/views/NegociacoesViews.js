@@ -16,8 +16,11 @@ class NegociacoesView {
   }
   static refresh(listaNegociacoes, total) {
     let table = this.table(listaNegociacoes);
-    $(".linhaNegociacao").remove();
+    this.limparLista();
     $("#tabelaNegociacoes").append(table);
     $("#footer").text(total);
+  }
+  static limparLista() {
+    $(".linhaNegociacao").remove();
   }
 }
