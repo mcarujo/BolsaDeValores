@@ -19,4 +19,7 @@ class ListaNegociacoes {
       return total;
     }
   }
+  limpaLista() {
+    this.negociacoes = [];
+  }
 }
